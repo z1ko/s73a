@@ -8,7 +8,9 @@ int main() {
     using namespace artica;
 
     // Set up logger service
+    service_logger::provide(new util::console_logger{});
     auto logger = service_logger::get();
+    
     logger->info("Welcome to the S73-Artica real time audio synthetizer");
 
     // Set up backend audio engine service
